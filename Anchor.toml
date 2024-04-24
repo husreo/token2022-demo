@@ -1,16 +1,18 @@
+[toolchain]
+
 [features]
 seeds = false
 skip-lint = false
-[programs.localnet]
-transferhook = "7aeu4HRHR4UwQndRDyh5f7nMwgxgH3rrtLgRntxdivZw"
+
+[programs.devnet]
+anchor_counter = "DJgrtbe5xrk7nJur17rFXSqJNU1xA8pAtVHebo8FueEL"
+
+[registry]
+url = "https://api.apr.dev"
 
 [provider]
-cluster = "Localnet"
+cluster = "devnet"
 wallet = "./id.json"
 
 [scripts]
 test = "yarn run ts-mocha -p ./tsconfig.json -t 1000000 tests/**/*.ts"
-
-[test.validator]
-ticks_per_slot = 2
-slots_per_epoch = "64"
